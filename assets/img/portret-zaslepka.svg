@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Miejsce na zdjęcie prowadzącego">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFE6D6"/><stop offset="1" stop-color="#E2D3BC"/></linearGradient></defs>
+  <rect width="400" height="500" fill="url(#g)"/>
+  <circle cx="200" cy="200" r="72" fill="#C9B79C"/>
+  <path d="M70 500c10-110 70-170 130-170s120 60 130 170z" fill="#C9B79C"/>
+  <text x="200" y="460" text-anchor="middle" font-family="Lato, sans-serif" font-size="20" fill="#6E5A48">Tu będzie Twoje zdjęcie</text>
+</svg>
