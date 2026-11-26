@@ -4,14 +4,14 @@
 */
 window.SITE_CONFIG = {
   // Dane prowadzącego (pojawiają się w stopce, regulaminie i polityce prywatności)
-  ownerName: "[Imię i Nazwisko]",
-  ownerPhone: "[+48 000 000 000]",
-  ownerEmail: "[adres@email.pl]",
+  ownerName: "[Dawid Grzelczyk]",
+  ownerPhone: "[+48 789 598 758]",
+  ownerEmail: "[dawid.wloskinaluzie@gmail.com]",
   // Adres do korespondencji: ustawa o prawach konsumenta wymaga go w regulaminie (może być adres do doręczeń, nie musi być domowy)
   ownerAddress: "[adres do korespondencji]",
 
   // Numer WhatsApp w formacie międzynarodowym, same cyfry, bez + i spacji (np. 48600123456)
-  whatsapp: "48000000000",
+  whatsapp: "48789598758",
 
   // Adres, pod który formularze wysyłają zgłoszenia.
   // Arkusz Google (zalecane): wklej adres aplikacji internetowej z Apps Script (instrukcja: crm/README.md),
