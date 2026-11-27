@@ -42,6 +42,61 @@
     $("#opinie").hidden = false;
   }
 
+  /* ---------- Pokaz slajdów ze zrzutami opinii ---------- */
+  var shots = Array.isArray(C.opinieScreeny) ? C.opinieScreeny.filter(Boolean) : [];
+  var slider = $("#opinie-slider");
+  if (slider && shots.length) {
+    var track = $("#opinie-slides"), dotsBox = $(".slide-dots", slider);
+    var src = function (f) { return /^(https?:|assets\/)/.test(f) ? f : "assets/img/opinie/" + f; };
+    track.innerHTML = shots.map(function (f, n) {
+      return '<figure class="slide"><button type="button" class="slide-open" aria-label="Powiększ opinię ' + (n + 1) + '">' +
+        '<img src="' + encodeURI(src(f)) + '" alt="Opinia ucznia ' + (n + 1) + '" loading="' + (n < 2 ? "eager" : "lazy") + '"></button></figure>';
+    }).join("");
+    dotsBox.innerHTML = shots.map(function () { return "<i></i>"; }).join("");
+    var slides = $$(".slide", track), sDots = $$("i", dotsBox), cur = 0, auto = null;
+    var maxL = function () { return track.scrollWidth - track.clientWidth; };
+    var pos = function (s) { return Math.min(maxL(), Math.max(0, s.offsetLeft - slides[0].offsetLeft)); };
+    var to = function (x) { track.scrollTo({ left: x, behavior: reduce ? "auto" : "smooth" }); };
+    var step = function (dir) {
+      var x = track.scrollLeft, list = slides.map(pos), t;
+      if (dir > 0) { t = list.filter(function (p) { return p > x + 5; })[0]; to(t === undefined ? 0 : t); }
+      else { t = list.filter(function (p) { return p < x - 5; }).pop(); to(t === undefined ? maxL() : t); }
+    };
+    var go = function (n) { step(n > cur ? 1 : -1); };
+    var mark = function () {
+      var x = track.scrollLeft, best = 0, bd = Infinity;
+      if (x >= maxL() - 5) best = slides.length - 1;
+      else slides.forEach(function (s, n) { var d = Math.abs(pos(s) - x); if (d < bd - 1) { bd = d; best = n; } });
+      cur = best; sDots.forEach(function (d, n) { d.classList.toggle("on", n === cur); });
+    };
+    var stop = function () { if (auto) { clearInterval(auto); auto = null; } };
+    track.addEventListener("scroll", function () { requestAnimationFrame(mark); }, { passive: true });
+    $(".prev", slider).addEventListener("click", function () { stop(); go(cur - 1); });
+    $(".next", slider).addEventListener("click", function () { stop(); go(cur + 1); });
+    track.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { stop(); go(cur + 1); } else if (e.key === "ArrowLeft") { stop(); go(cur - 1); }
+    });
+    ["pointerdown", "touchstart", "wheel"].forEach(function (ev) { track.addEventListener(ev, stop, { passive: true }); });
+    if (slides.length > 1 && !reduce) auto = setInterval(function () { go(cur + 1); }, 4500);
+    slider.classList.toggle("single", slides.length === 1);
+    // Powiększenie
+    var lb = $("#lightbox"), lbImg = lb && $("img", lb);
+    var closeLb = function () { lb.hidden = true; document.body.style.overflow = ""; };
+    $$(".slide-open", track).forEach(function (b) {
+      b.addEventListener("click", function () {
+        stop(); lbImg.src = $("img", b).src; lbImg.alt = $("img", b).alt;
+        lb.hidden = false; document.body.style.overflow = "hidden"; $(".lightbox-close", lb).focus();
+      });
+    });
+    if (lb) {
+      lb.addEventListener("click", function (e) { if (e.target !== lbImg) closeLb(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) closeLb(); });
+    }
+    slider.hidden = false;
+    $("#opinie").hidden = false;
+    mark();
+  }
+
   /* ---------- Nawigacja ---------- */
   var nav = $("#nav"), burger = $("#burger"), menu = $("#mobile-menu");
   function closeMenu() {
