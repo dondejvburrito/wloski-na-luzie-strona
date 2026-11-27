@@ -26,6 +26,13 @@ window.SITE_CONFIG = {
   priceLesson: "80",     // lekcja 1:1 online, zł za 60 minut
   termsVersion: "27.11.2026",
 
+  // ZRZUTY EKRANU Z OPINIAMI (pokaz slajdów) - wgraj obrazki do folderu assets/img/opinie/
+  // i wpisz tu ich nazwy w cudzysłowie, oddzielone przecinkami, np.:
+  //   opinieScreeny: ["opinia-1.jpg", "opinia-2.png"],
+  // Przed wgraniem zamaż nazwiska, numery telefonów i zdjęcia profilowe. Tylko za zgodą ucznia.
+  opinieScreeny: [
+  ],
+
   // OPINIE UCZNIÓW - sekcja „Wasze opinie” pojawi się na stronie, gdy dodasz tu pierwszą opinię.
   // Tylko prawdziwe opinie, za zgodą ucznia (np. z formularza na stronie opinia.html).
   // Wzór jednej opinii (skopiuj, wklej między [ ] i uzupełnij; kolejne oddziel przecinkiem):
