@@ -14,7 +14,7 @@ Prosta, statyczna strona (HTML, CSS, JavaScript bez bibliotek) do zapisów na be
 2. **Podłącz formularze** do Arkusza Google według `crm/README.md` i wklej adres do `formEndpoint`.
 3. **Włącz GitHub Pages:** w repozytorium **Settings → Pages → Build and deployment**: Source „Deploy from a branch”, Branch `main`, folder `/ (root)` → Save. Po 1–2 minutach strona będzie pod adresem
    **https://dondejvburrito.github.io/wloski-na-luzie-strona/**
-4. Podmień zaślepki: `assets/img/portret-zaslepka.svg` (Twoje zdjęcie, najlepiej pionowe 4:5, np. `portret.jpg`, i zmiana ścieżki w `index.html`) oraz `assets/img/logo.svg` i `favicon.svg`.
+4. **Zdjęcie:** wgraj swoje zdjęcie jako `assets/img/portret.jpg` (na GitHubie: wejdź do folderu `assets/img` → „Add file” → „Upload files” → przeciągnij plik → „Commit changes”). Najlepiej pionowe 4:5 (np. 800 × 1000 px), do ok. 300 KB, nazwa pliku dokładnie `portret.jpg`, małymi literami. Dopóki go nie ma, strona pokazuje zaślepkę. Logo podmieniasz tak samo: `assets/img/logo.svg` i `favicon.svg`.
 
 Własna domena później: Settings → Pages → Custom domain.
 

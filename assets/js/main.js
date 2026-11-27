@@ -11,7 +11,7 @@
     var v = C[el.getAttribute("data-cfg")];
     if (v) el.textContent = v;
   });
-  var waText = encodeURIComponent("Ciao! Chcę zapytać o kurs Włoski offline.");
+  var waText = encodeURIComponent("Ciao! Chcę zapytać o lekcje włoskiego.");
   $$("[data-wa]").forEach(function (a) {
     a.href = "https://wa.me/" + (C.whatsapp || "") + "?text=" + waText;
     a.target = "_blank"; a.rel = "noopener";
@@ -21,6 +21,8 @@
   var y = $("#year"); if (y) y.textContent = new Date().getFullYear();
   var pw = $("#per-week");
   if (pw && C.priceMonthly) pw.textContent = Math.round(parseFloat(C.priceMonthly) * 12 / 52);
+  var pm = $("#per-month-1on1");
+  if (pm && C.priceLesson) pm.textContent = Math.round(parseFloat(C.priceLesson) * 4);
 
   /* ---------- Nawigacja ---------- */
   var nav = $("#nav"), burger = $("#burger"), menu = $("#mobile-menu");
@@ -159,6 +161,15 @@
   });
   if (location.hash === "#pytanie" && tabs[1]) selectTab(tabs[1]);
 
+  /* ---------- Przyciski produktów zaznaczają wybór w formularzu ---------- */
+  $$("[data-product]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (tabs[0]) selectTab(tabs[0]);
+      var r = document.querySelector('input[name="produkt"][value="' + a.getAttribute("data-product") + '"]');
+      if (r) r.checked = true;
+    });
+  });
+
   /* ---------- Formularze ---------- */
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   function validate(form) {
@@ -210,7 +221,8 @@
 
       var data = new FormData(form);
       data.delete("_gotcha");
-      data.append("typ", form.getAttribute("data-type") === "zapis" ? "Zapis na lekcję 0" : "Pytanie");
+      var produkt = data.get("produkt");
+      data.append("typ", form.getAttribute("data-type") === "zapis" ? "Zapis na lekcję 0" + (produkt ? " · " + produkt : "") : "Pytanie");
       data.append("wersja_regulaminu", C.termsVersion || "");
       data.append("data_zgloszenia", new Date().toISOString());
       data.append("strona", location.href.split("#")[0]);

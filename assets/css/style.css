@@ -144,7 +144,8 @@ p { margin: 0 0 1em; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; overflow: hidden; padding: 56px 0 80px; }
-.hero-grid { display: grid; gap: 40px; align-items: center; position: relative; z-index: 2; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: center; position: relative; z-index: 2; }
+.hero-grid > * { min-width: 0; }
 .hero h1 { color: var(--ink); }
 .hero h1 .accent { color: var(--red); display: block; }
 .rotator {
@@ -446,3 +447,50 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--g
   .nav, .mobile-menu, .mobile-cta, .tricolore { display: none !important; }
   body { background: #fff; }
 }
+
+/* ---------- Dwa produkty ---------- */
+.products { display: grid; gap: 22px; max-width: 920px; margin: 0 auto; }
+@media (min-width: 820px) { .products { grid-template-columns: 1fr 1fr; align-items: stretch; } }
+.product {
+  position: relative; background: var(--white); border-radius: 24px; padding: 30px 26px; box-shadow: var(--shadow);
+  border: 2px solid transparent; display: flex; flex-direction: column; transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.product:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.product.featured { border-color: var(--green); }
+.product h3 { font-size: 1.35rem; margin: 14px 0 4px; }
+.product .tag { align-self: flex-start; }
+.product .checks { flex: 1; }
+.product-price { font-family: var(--font-head); font-size: 2.6rem; color: var(--red); line-height: 1.1; margin: 6px 0 12px; }
+.product.featured .product-price { color: var(--green); }
+.product-price small { font-family: var(--font-body); font-size: .95rem; color: var(--ink-soft); }
+.product-for { color: var(--ink-soft); font-size: .98rem; }
+.ribbon {
+  position: absolute; top: -14px; right: 22px; background: var(--green); color: #fff; font-size: .75rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; box-shadow: var(--shadow);
+}
+.center-note { text-align: center; margin: 30px 0 0; color: var(--ink-soft); }
+.center-note a { font-weight: 700; }
+.cta-row { text-align: center; margin-top: 34px; }
+.compare-wide { max-width: 920px; margin: 0 auto; }
+.compare-wide .cta-row { margin-top: 22px; }
+.bar i.us2 { background: linear-gradient(90deg, var(--red), var(--red-dark)); }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll .compare-table { min-width: 460px; }
+
+/* ---------- Jak zacząć ---------- */
+.start-steps { list-style: none; padding: 0; margin: 0 auto 34px; max-width: 820px; display: grid; gap: 12px; }
+@media (min-width: 760px) { .start-steps { grid-template-columns: repeat(3, 1fr); } }
+.start-steps li { display: flex; align-items: center; gap: 12px; background: var(--white); border-radius: var(--radius-sm); padding: 14px 16px; box-shadow: var(--shadow); font-weight: 700; font-size: .95rem; }
+.start-steps b { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--red); color: #fff; font-family: var(--font-head); }
+
+/* ---------- Wybór produktu w formularzu ---------- */
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.seg label { cursor: pointer; position: relative; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg span {
+  display: flex; align-items: center; justify-content: center; text-align: center; min-height: 50px; padding: 6px 8px;
+  border: 1.5px solid #D8CBB8; border-radius: 12px; background: var(--cream); font-weight: 700; font-size: .92rem;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.seg input:checked + span { background: var(--green); border-color: var(--green); color: #fff; }
+.seg input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
