@@ -27,6 +27,21 @@
   var pm = $("#per-month-1on1");
   if (pm && C.priceLesson) pm.textContent = Math.round(parseFloat(C.priceLesson) * 4);
 
+  /* ---------- Opinie z config.js ---------- */
+  var opList = $("#opinie-lista"), opinie = Array.isArray(C.opinie) ? C.opinie.filter(function (o) { return o && o.tekst; }) : [];
+  if (opList && opinie.length) {
+    var esc = function (t) { var d = document.createElement("div"); d.textContent = String(t || ""); return d.innerHTML; };
+    opList.innerHTML = opinie.map(function (o, n) {
+      var av = o.zdjecie
+        ? '<img class="avatar" src="' + esc(o.zdjecie) + '" alt="" width="52" height="52" loading="lazy">'
+        : '<span class="avatar">' + esc((o.imie || "?").trim().charAt(0).toUpperCase()) + "</span>";
+      return '<figure class="review reveal" data-delay="' + (n % 3 + 1) + '"><blockquote>' + esc(o.tekst) + "</blockquote>" +
+        "<figcaption>" + av + "<span><b>" + esc(o.imie) + "</b>" + (o.opis ? "<small>" + esc(o.opis) + "</small>" : "") + "</span></figcaption></figure>";
+    }).join("");
+    opList.classList.toggle("few", opinie.length < 3);
+    $("#opinie").hidden = false;
+  }
+
   /* ---------- Nawigacja ---------- */
   var nav = $("#nav"), burger = $("#burger"), menu = $("#mobile-menu");
   function closeMenu() {
@@ -224,8 +239,13 @@
 
       var data = new FormData(form);
       data.delete("_gotcha");
-      var produkt = data.get("produkt");
-      data.append("typ", form.getAttribute("data-type") === "zapis" ? "Zapis na lekcję 0" + (produkt ? " · " + produkt : "") : "Pytanie");
+      var produkt = data.get("produkt"), ftype = form.getAttribute("data-type");
+      if (ftype === "opinia") {
+        data.set("wiadomosc", (data.get("wiadomosc") || "") + (data.get("opis") ? "\n\nPodpis: " + data.get("opis") : ""));
+        data.delete("opis");
+      }
+      data.append("typ", ftype === "zapis" ? "Zapis na lekcję 0" + (produkt ? " · " + produkt : "")
+        : ftype === "opinia" ? "Opinia · zgoda na publikację: " + (data.get("zgoda_publikacja") || "nie") : "Pytanie");
       data.append("wersja_regulaminu", C.termsVersion || "");
       data.append("data_zgloszenia", new Date().toISOString());
       data.append("strona", location.href.split("#")[0]);
@@ -245,6 +265,10 @@
 
       req.then(function () {
         var zapis = form.getAttribute("data-type") === "zapis";
+        if (form.getAttribute("data-type") === "opinia") {
+          form.innerHTML = '<div class="success"><div class="big-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div><h3>Grazie mille!</h3><p>Dziękuję za opinię. Pojawi się na stronie po przeczytaniu.</p><p><a href="index.html">Wróć na stronę główną</a></p></div>';
+          return;
+        }
         form.innerHTML =
           '<div class="success"><div class="big-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>' +
           "<h3>Grazie mille!</h3><p>" +

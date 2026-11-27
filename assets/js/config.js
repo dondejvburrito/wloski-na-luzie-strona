@@ -24,5 +24,13 @@ window.SITE_CONFIG = {
   // Ceny i wersja regulaminu (data w regulaminie musi się zgadzać)
   priceMonthly: "179",   // kurs offline, zł miesięcznie
   priceLesson: "80",     // lekcja 1:1 online, zł za 60 minut
-  termsVersion: "27.11.2026"
+  termsVersion: "27.11.2026",
+
+  // OPINIE UCZNIÓW - sekcja „Wasze opinie” pojawi się na stronie, gdy dodasz tu pierwszą opinię.
+  // Tylko prawdziwe opinie, za zgodą ucznia (np. z formularza na stronie opinia.html).
+  // Wzór jednej opinii (skopiuj, wklej między [ ] i uzupełnij; kolejne oddziel przecinkiem):
+  //   { imie: "Anna", opis: "lekcje 1:1, Kraków", tekst: "Treść opinii.", zdjecie: "" },
+  // zdjecie: opcjonalnie, np. "assets/img/opinie/anna.jpg" (plik wgrywasz do tego folderu); puste = inicjał.
+  opinie: [
+  ]
 };
