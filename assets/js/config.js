@@ -18,7 +18,7 @@ window.SITE_CONFIG = {
   //   wygląda tak: https://script.google.com/macros/s/XXXXXXXX/exec
   // Formspree: https://formspree.io/f/XXXXXXXX
   // Puste = formularz pokaże prośbę o kontakt przez WhatsApp.
-  formEndpoint: "",
+  formEndpoint: "https://script.google.com/macros/s/AKfycby94653YbspZrwopyc5HyMhgnDWz94Osuc8cJ1d6RmzDG1P0dXYjweZiiNwTTzQYjsV/exec",
 
   // Cena i wersja regulaminu (data w regulaminie musi się zgadzać)
   priceMonthly: "179",
