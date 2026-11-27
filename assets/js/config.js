@@ -7,8 +7,9 @@ window.SITE_CONFIG = {
   ownerName: "Dawid Grzelczyk",
   ownerPhone: "+48 789 598 758",
   ownerEmail: "dawid.wloskinaluzie@gmail.com",
-  // Adres do korespondencji: ustawa o prawach konsumenta wymaga go w regulaminie (może być adres do doręczeń, nie musi być domowy)
-  ownerAddress: "[adres do korespondencji]",
+  // Adres pocztowy do korespondencji (opcjonalnie). Puste = w regulaminie i polityce widać tylko e-mail i telefon.
+  // Ustawa o prawach konsumenta wymaga adresu przedsiębiorcy, więc warto go wpisać (np. adres do doręczeń).
+  ownerAddress: "",
 
   // Numer WhatsApp w formacie międzynarodowym, same cyfry, bez + i spacji (np. 48600123456)
   whatsapp: "48789598758",

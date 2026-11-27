@@ -11,6 +11,9 @@
     var v = C[el.getAttribute("data-cfg")];
     if (v) el.textContent = v;
   });
+  $$("[data-if-cfg]").forEach(function (el) {
+    if (!C[el.getAttribute("data-if-cfg")]) el.hidden = true;
+  });
   var waText = encodeURIComponent("Ciao! Chcę zapytać o lekcje włoskiego.");
   $$("[data-wa]").forEach(function (a) {
     a.href = "https://wa.me/" + (C.whatsapp || "") + "?text=" + waText;

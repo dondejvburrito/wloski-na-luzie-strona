@@ -45,7 +45,7 @@
   <h2 id="p1">§ 1. Postanowienia ogólne</h2>
   <ol>
     <li>Regulamin określa zasady świadczenia usług edukacyjnych prowadzonych pod nazwą „Włoski na luzie”: indywidualnych lekcji języka włoskiego online (dalej: „Lekcje 1:1”) oraz kursu „Włoski offline” (dalej: „Kurs offline”).</li>
-    <li>Usługi świadczy <strong><span data-cfg="ownerName">[Imię i Nazwisko]</span></strong>, adres do korespondencji: <span data-cfg="ownerAddress">[adres do korespondencji]</span>, e-mail: <span data-cfg="ownerEmail">[adres@email.pl]</span>, telefon i WhatsApp: <span data-cfg="ownerPhone">[+48 000 000 000]</span> (dalej: „Usługodawca”).</li>
+    <li>Usługi świadczy <strong><span data-cfg="ownerName">[Imię i Nazwisko]</span></strong>, <span data-if-cfg="ownerAddress">adres do korespondencji: <span data-cfg="ownerAddress">[adres do korespondencji]</span>, </span>e-mail: <span data-cfg="ownerEmail">[adres@email.pl]</span>, telefon i WhatsApp: <span data-cfg="ownerPhone">[+48 000 000 000]</span> (dalej: „Usługodawca”).</li>
     <li>Usługodawca prowadzi działalność nierejestrowaną w rozumieniu art. 5 ust. 1 ustawy z dnia 6 marca 2018 r. Prawo przedsiębiorców. Nie posiada numeru NIP ani wpisu do CEIDG.</li>
     <li>Regulamin jest udostępniany bezpłatnie na stronie internetowej w formie, która pozwala go pobrać, zapisać i wydrukować.</li>
   </ol>
@@ -68,7 +68,7 @@
     <li><strong>Kurs offline</strong> składa się z następujących etapów:
       <ol type="a">
         <li>Lekcja 0 (do 30 minut, bezpłatna): rozmowa o celach Klienta, przedstawienie sposobu pracy, pierwsze słowa;</li>
-        <li>obóz startowy: trzy lekcje na żywo po 90 minut (lekcje 1-3), zwykle w ciągu pierwszego okresu rozliczeniowego;</li>
+        <li>obóz startowy: trzy lekcje na żywo po 90 minut (lekcje 1-3), w ramach ceny pierwszego okresu rozliczeniowego, bez dodatkowych opłat;</li>
         <li>bloki pięciu tygodni pracy samodzielnej: co tydzień Klient otrzymuje nową kartę materiałów (orientacyjnie ok. 4 godziny pracy tygodniowo), a Usługodawca sprawdza i komentuje tekst napisany przez Klienta na koniec tygodnia;</li>
         <li>lekcja kontrolna na żywo (60 minut) po każdym bloku pięciu tygodni: krótki test, omówienie błędów, rozmowa;</li>
         <li>kontakt z Usługodawcą przez WhatsApp lub e-mail w sprawach związanych z nauką. Usługodawca odpowiada w miarę możliwości w ciągu 2 dni roboczych.</li>
@@ -166,7 +166,7 @@
   <h2 id="wzor">Wzór formularza odstąpienia od umowy</h2>
   <p class="meta">(formularz należy wypełnić i odesłać tylko w przypadku chęci odstąpienia od umowy)</p>
   <div class="form-box">
-    <p><strong>Adresat:</strong> <span data-cfg="ownerName">[Imię i Nazwisko]</span>, <span data-cfg="ownerAddress">[adres do korespondencji]</span>, e-mail: <span data-cfg="ownerEmail">[adres@email.pl]</span></p>
+    <p><strong>Adresat:</strong> <span data-cfg="ownerName">[Imię i Nazwisko]</span>, <span data-if-cfg="ownerAddress"><span data-cfg="ownerAddress">[adres do korespondencji]</span>, </span>e-mail: <span data-cfg="ownerEmail">[adres@email.pl]</span></p>
     <p>Ja, niżej podpisany/podpisana, niniejszym informuję o moim odstąpieniu od umowy o świadczenie usługi: Lekcje 1:1 online / Kurs „Włoski offline” (niepotrzebne skreślić).</p>
     <p>Data zawarcia umowy: ………………………</p>
     <p>Imię i nazwisko konsumenta: ………………………</p>
