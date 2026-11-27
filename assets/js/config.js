@@ -4,9 +4,9 @@
 */
 window.SITE_CONFIG = {
   // Dane prowadzącego (pojawiają się w stopce, regulaminie i polityce prywatności)
-  ownerName: "[Dawid Grzelczyk]",
-  ownerPhone: "[+48 789 598 758]",
-  ownerEmail: "[dawid.wloskinaluzie@gmail.com]",
+  ownerName: "Dawid Grzelczyk",
+  ownerPhone: "+48 789 598 758",
+  ownerEmail: "dawid.wloskinaluzie@gmail.com",
   // Adres do korespondencji: ustawa o prawach konsumenta wymaga go w regulaminie (może być adres do doręczeń, nie musi być domowy)
   ownerAddress: "[adres do korespondencji]",
 
@@ -20,7 +20,8 @@ window.SITE_CONFIG = {
   // Puste = formularz pokaże prośbę o kontakt przez WhatsApp.
   formEndpoint: "https://script.google.com/macros/s/AKfycby94653YbspZrwopyc5HyMhgnDWz94Osuc8cJ1d6RmzDG1P0dXYjweZiiNwTTzQYjsV/exec",
 
-  // Cena i wersja regulaminu (data w regulaminie musi się zgadzać)
-  priceMonthly: "179",
-  termsVersion: "26.11.2026"
+  // Ceny i wersja regulaminu (data w regulaminie musi się zgadzać)
+  priceMonthly: "179",   // kurs offline, zł miesięcznie
+  priceLesson: "80",     // lekcja 1:1 online, zł za 60 minut
+  termsVersion: "27.11.2026"
 };

@@ -1,6 +1,6 @@
 # Zasady strony „Włoski na luzie”
 
-Statyczna strona zapisów na kurs „Włoski offline” (GitHub Pages, gałąź `main`, katalog główny). Bez frameworków, bez kroku budowania, bez bibliotek JS i CSS z CDN.
+Statyczna strona zapisów na lekcje włoskiego 1:1 online i kurs „Włoski offline” (GitHub Pages, gałąź `main`, katalog główny). Bez frameworków, bez kroku budowania, bez bibliotek JS i CSS z CDN.
 
 ## Struktura
 - `index.html` (jedna strona z sekcjami), `regulamin.html`, `polityka-prywatnosci.html`.
@@ -20,7 +20,8 @@ Statyczna strona zapisów na kurs „Włoski offline” (GitHub Pages, gałąź 
 - Język polski, ton ciepły i konkretny, zwracamy się do ucznia na „Ty”. Formy neutralne płciowo wobec ucznia („samodzielnie”, „Akceptuję”), bo odbiorcy to głównie kobiety, ale nie tylko.
 - Bez emotek, bez długich myślników (tylko „ - ” lub „–” w zakresach liczb), bez sztucznych pochwał i bez wzmianek o AI.
 - Żadnych wymyślonych opinii ani liczb. Sekcja `#opinie` jest ukryta (`hidden`), dopóki nie ma prawdziwych opinii za zgodą uczniów.
-- Fakty o kursie zgodne z wytycznymi offline: lekcja 0 (30 min, za darmo), obóz L1–3 (3 × 90 min 1:1), bloki 5 tygodni (ok. 4 h tygodniowo, korekta tekstu co tydzień), lekcja kontrolna 60 min, kontakt WhatsApp. Płatność dopiero po rozmowie (bez płatności na stronie).
+- Prowadzący: Dawid (nie „Dejf”). Strona sprzedaje dwa produkty: lekcje 1:1 online (cena `priceLesson`, za 60 min) i kurs offline (`priceMonthly`). Wspólne wejście: darmowa lekcja 0, na której uczeń wybiera tryb. Główne CTA zawsze prowadzi do lekcji 0.
+- Fakty o kursie offline zgodne z wytycznymi offline: lekcja 0 (30 min, za darmo), obóz L1–3 (3 × 90 min 1:1), bloki 5 tygodni (ok. 4 h tygodniowo, korekta tekstu co tydzień), lekcja kontrolna 60 min, kontakt WhatsApp. Płatność dopiero po rozmowie (bez płatności na stronie).
 
 ## Prawo
 - Prowadzący działa w ramach działalności nierejestrowanej. Regulamin i polityka prywatności muszą zgadzać się z tym, co robi strona i formularze (lista dostawców w polityce, okresy przechowywania).
