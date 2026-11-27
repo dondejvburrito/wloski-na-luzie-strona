@@ -494,3 +494,31 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--g
 }
 .seg input:checked + span { background: var(--green); border-color: var(--green); color: #fff; }
 .seg input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ---------- Opinie ---------- */
+.reviews {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 6px 4px 18px; margin: 0 -4px;
+  scrollbar-width: none;
+}
+.reviews::-webkit-scrollbar { display: none; }
+@media (min-width: 760px) {
+  .reviews { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); grid-auto-columns: auto; overflow: visible; }
+  .reviews.few { grid-template-columns: repeat(auto-fit, minmax(280px, 360px)); justify-content: center; }
+}
+.review {
+  scroll-snap-align: start; margin: 0; background: var(--white); border-radius: var(--radius); padding: 26px 24px 22px;
+  box-shadow: var(--shadow); display: flex; flex-direction: column; position: relative; border-top: 4px solid var(--gold);
+}
+.review::before {
+  content: "\201C"; position: absolute; top: 2px; right: 18px; font-family: var(--font-head); font-size: 4.5rem;
+  line-height: 1; color: var(--travertine);
+}
+.review blockquote { margin: 0 0 18px; flex: 1; font-size: 1rem; color: var(--ink); position: relative; }
+.review figcaption { display: flex; align-items: center; gap: 12px; }
+.review figcaption b { display: block; }
+.review figcaption small { display: block; color: var(--ink-soft); font-size: .85rem; }
+.avatar {
+  flex: none; width: 52px; height: 52px; border-radius: 50%; object-fit: cover; display: grid; place-items: center;
+  background: var(--red); color: #fff; font-family: var(--font-head); font-size: 1.3rem; font-weight: 700;
+}

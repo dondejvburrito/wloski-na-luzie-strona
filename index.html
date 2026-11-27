@@ -319,13 +319,16 @@
   </div>
 </section>
 
-<!-- OPINIE: odkryj sekcję (usuń atrybut hidden), gdy będą prawdziwe opinie uczniów (za ich zgodą). Nie wpisuj opinii wymyślonych. -->
+<!-- OPINIE: sekcja pokazuje się sama, gdy w assets/js/config.js w "opinie" jest co najmniej jedna opinia. Tylko prawdziwe opinie, za zgodą uczniów. -->
 <section class="section" id="opinie" hidden>
   <div class="container">
-    <div class="section-head center"><span class="eyebrow">Opinie</span><h2>Co mówią uczniowie</h2></div>
-    <div class="grid grid-3">
-      <figure class="card"><blockquote>[Treść opinii]</blockquote><figcaption>[Imię, miasto]</figcaption></figure>
+    <div class="section-head center reveal">
+      <span class="eyebrow">Wasze opinie</span>
+      <h2>Co mówią uczniowie</h2>
     </div>
+    <div class="reviews" id="opinie-lista"></div>
+    <p class="center-note">Uczysz się ze mną? <a href="opinia.html">Zostaw opinię</a></p>
+    <div class="cta-row"><a class="btn btn-primary" href="#zapisy">Umów darmową lekcję 0</a></div>
   </div>
 </section>
 

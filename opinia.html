@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Twoja opinia · Włoski na luzie</title>
+  <meta name="description" content="Podziel się opinią o lekcjach włoskiego z Dawidem.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#9E2B25">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="tricolore" aria-hidden="true"></div>
+<header class="nav scrolled">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="" width="40" height="40"><span>Włoski na luzie</span></a>
+    <a class="btn btn-ghost" style="min-height:42px;padding:0 18px" href="index.html">Wróć</a>
+  </div>
+</header>
+
+<main class="section alt" id="main" style="padding-top:50px">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Wasze opinie</span>
+      <h2>Jak Ci się uczy?</h2>
+      <p class="lead">Kilka zdań od Ciebie bardzo pomoże osobom, które zastanawiają się, czy zacząć. Napisz szczerze, co Ci daje nauka i co lubisz w lekcjach albo w materiałach.</p>
+    </div>
+
+    <div class="form-wrap">
+      <div class="panel">
+        <form class="js-form" data-type="opinia" novalidate>
+          <div class="row2">
+            <div class="field"><label class="lbl" for="o-imie">Imię (tak będzie podpisana opinia) <em>*</em></label><input id="o-imie" name="imie" type="text" autocomplete="given-name" required><div class="err-msg">Podaj imię.</div></div>
+            <div class="field"><label class="lbl" for="o-opis">Krótki opis</label><input id="o-opis" name="opis" type="text" placeholder="np. lekcje 1:1, Kraków"></div>
+          </div>
+          <div class="field"><label class="lbl" for="o-tekst">Twoja opinia <em>*</em></label><textarea id="o-tekst" name="wiadomosc" required placeholder="2-4 zdania wystarczą"></textarea><div class="err-msg">Napisz kilka zdań.</div></div>
+          <div class="field"><label class="lbl" for="o-email">E-mail (nie będzie widoczny)</label><input id="o-email" name="email" type="email" autocomplete="email" inputmode="email"><div class="err-msg">Podaj poprawny e-mail.</div></div>
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <label class="consent"><input type="checkbox" name="zgoda_publikacja" value="tak" required><span>Zgadzam się na publikację mojej opinii wraz z imieniem i krótkim opisem na stronie wloskinaluzie.pl. Zgodę mogę wycofać w każdej chwili. <em style="color:var(--red);font-style:normal">*</em></span></label>
+          <p class="rodo-info">Administratorem danych jest <span data-cfg="ownerName">[Imię i Nazwisko]</span> (Włoski na luzie). Opinię opublikuję tylko za Twoją zgodą i usunę ją ze strony na Twoją prośbę. E-mail służy wyłącznie do kontaktu w sprawie opinii. Więcej w <a href="polityka-prywatnosci.html" target="_blank">Polityce prywatności</a>.</p>
+
+          <button class="btn btn-primary btn-block" type="submit"><span class="spinner" aria-hidden="true"></span><span class="label">Wyślij opinię</span></button>
+          <div class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer" style="padding-bottom:40px">
+  <div class="container"><div class="legal" style="border:0;margin:0;padding:0">© 2026 <span data-cfg="ownerName">[Imię i Nazwisko]</span> · Włoski na luzie · <a href="polityka-prywatnosci.html">Polityka prywatności</a></div></div>
+</footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
