@@ -12,11 +12,20 @@ Prosta, statyczna strona (HTML, CSS, JavaScript bez bibliotek) do zapisów na be
 
 1. **Uzupełnij dane** w `assets/js/config.js` (na GitHubie: otwórz plik → ikona ołówka → zmień → „Commit changes”).
 2. **Podłącz formularze** do Arkusza Google według `crm/README.md` i wklej adres do `formEndpoint`.
-3. **Włącz GitHub Pages:** w repozytorium **Settings → Pages → Build and deployment**: Source „Deploy from a branch”, Branch `main`, folder `/ (root)` → Save. Po 1–2 minutach strona będzie pod adresem
-   **https://dondejvburrito.github.io/wloski-na-luzie-strona/**
+3. **Włącz GitHub Pages:** w repozytorium **Settings → Pages → Build and deployment**: Source „Deploy from a branch”, Branch `main`, folder `/ (root)` → Save. Po 1–2 minutach strona będzie dostępna.
 4. **Zdjęcie:** wgraj swoje zdjęcie jako `assets/img/portret.jpg` (na GitHubie: wejdź do folderu `assets/img` → „Add file” → „Upload files” → przeciągnij plik → „Commit changes”). Najlepiej pionowe 4:5 (np. 800 × 1000 px), do ok. 300 KB, nazwa pliku dokładnie `portret.jpg`, małymi literami. Dopóki go nie ma, strona pokazuje zaślepkę. Logo podmieniasz tak samo: `assets/img/logo.svg` i `favicon.svg`.
 
-Własna domena później: Settings → Pages → Custom domain.
+## Domena wloskinaluzie.pl
+
+Strona działa pod **https://wloskinaluzie.pl** (plik `CNAME` w repozytorium). DNS domeny ustawia się w panelu OVH:
+
+| typ | subdomena | cel |
+|---|---|---|
+| A | (puste) | 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 (4 osobne rekordy) |
+| AAAA | (puste) | 2606:50c0:8000::153, 2606:50c0:8001::153, 2606:50c0:8002::153, 2606:50c0:8003::153 |
+| CNAME | www | dondejvburrito.github.io. |
+
+Rekordów MX i TXT (SPF) od OVH nie ruszać: obsługują skrzynkę e-mail w domenie. W GitHubie: Settings → Pages → Custom domain `wloskinaluzie.pl` → po weryfikacji zaznaczyć „Enforce HTTPS”.
 
 ## Podgląd lokalny
 
